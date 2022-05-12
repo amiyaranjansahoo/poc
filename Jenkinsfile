@@ -1,3 +1,4 @@
+@Library('jenkins-lib') _
 pipeline {
     agent any
     tools {
@@ -16,14 +17,10 @@ pipeline {
             }
         }
         
-        //stage("SCP the artifcat and deploy to tomcat") {
-            //steps {
-                //sshagent(['tomcat']) {
-                   // sh 'scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.12.198:/software/tomcat9/webapps/'
-                	//sh 'ssh ec2-user@172.31.12.198 /software/tomcat9/bin/shutdown.sh'
-                	//sh 'ssh ec2-user@172.31.12.198 /software/tomcat9/bin/startup.sh'
-                //}
-            //}
-        //}
+        stage("SCP the artifcat and deploy to tomcat") {
+            steps {
+                tomcat('tomcat','ec2-user','15.206.116.134')
+            }
+        }
     }
 }

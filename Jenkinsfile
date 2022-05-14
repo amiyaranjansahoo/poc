@@ -17,11 +17,11 @@ pipeline {
             }
         }
         
-        stage("SCP the artifcat and deploy to tomcat") {
-            steps {
-                tomcat('tomcat','ec2-user','15.206.116.134')
-            }
-        }
+        //stage("SCP the artifcat and deploy to tomcat") {
+            //steps {
+                //tomcat('tomcat','ec2-user','15.206.116.134')
+            //}
+        //}
         
         stage("Upload to artifact") {
             steps {

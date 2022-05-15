@@ -26,7 +26,7 @@ pipeline {
         stage("Upload to artifact") {
             steps {
                 nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', 
-                    file: 'target/my-app.war', type: 'war']], 
+                    file: 'my-app-0.0.2-SNAPSHOT.war', type: 'war']], 
                     credentialsId: 'nexus3', 
                     groupId: 'in.javahome', 
                     nexusUrl: '172.31.37.225:8081', 

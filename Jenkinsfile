@@ -25,7 +25,15 @@ pipeline {
         
         stage("Upload to artifact") {
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb.war', type: 'war']], credentialsId: 'nexus3', groupId: 'in.javahome', nexusUrl: '172.31.46.220:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sample-snapshot', version: '0.0.2-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', 
+                    file: 'target/myweb.war', type: 'war']], 
+                    credentialsId: 'nexus3', 
+                    groupId: 'in.javahome', 
+                    nexusUrl: '172.31.37.225:8081', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', 
+                    repository: 'sample-snapshot', 
+                    version: '0.0.2-SNAPSHOT'
             }
         }
     }

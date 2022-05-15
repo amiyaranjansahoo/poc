@@ -29,7 +29,7 @@ pipeline {
                     file: 'target/myweb', type: 'war']], 
                     credentialsId: 'nexus3', 
                     groupId: 'in.javahome', 
-                    nexusUrl: '172.31.37.225:8081', 
+                    nexusUrl: '172.31.5.234:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: 'sample-snapshot', 

@@ -24,7 +24,7 @@ pipeline {
 				sh "docker build . -t amiyaranjansahoo/myimg"
 				echo 'push to docker hub'
 				withCredentials([string(credentialsId: 'docker-hub', variable: 'docker_passwd')]) {
-					docker login -u amiyaranjansahoo -p {docker_passwd}
+					sh "docker login -u amiyaranjansahoo -p {docker_passwd}"
 				}
 				
 			}

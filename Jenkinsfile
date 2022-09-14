@@ -21,7 +21,7 @@ pipeline {
 			}
 		}
 		
-		stage('deploy to client server){
+		stage('deploy to client server'){
 			steps{
 				echo 'deploy to client server'
 			}

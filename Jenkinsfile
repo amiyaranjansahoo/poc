@@ -20,7 +20,9 @@ pipeline {
 		
 		stage('docker build and push to docker hub'){
 			steps{
-				echo 'docker build and push to docker hub'
+				echo 'docker build'
+				sh "docker build . -t amiyaranjansahoo/myimg"
+				echo 'push to docker hub'
 			}
 		}
 		

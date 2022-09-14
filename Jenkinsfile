@@ -21,10 +21,11 @@ pipeline {
 		stage('docker build and push to docker hub'){
 			steps{
 				echo 'docker build'
-				sh "docker build . -t amiyaranjansahoo/myimg"
+				sh "docker build . -t amiyaranjansahoo/myimg:v1"
 				echo 'push to docker hub'
 				withCredentials([string(credentialsId: 'docker-hub', variable: 'docker_passwd')]) {
-					sh "docker login -u amiyaranjansahoo -p {docker_passwd}"
+					sh "docker login -u amiyaranjansahoo -p ${docker_passwd}"
+					sh "docker push amiyaranjansahoo/myimg:v1 "
 				}
 				
 			}

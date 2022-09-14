@@ -1,5 +1,9 @@
 pipeline {
 	agent any
+	tools {
+		maven 'mvn'
+	}
+
 	
 	stages{
 		stage('git clone'){
@@ -10,7 +14,7 @@ pipeline {
 		
 		stage('maven build'){
 			steps{
-				sh "mvn clean package"
+				sh 'mvn clean package'
 			}
 		}
 		

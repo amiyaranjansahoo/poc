@@ -33,7 +33,9 @@ pipeline {
 		
 		stage('deploy to client server'){
 			steps{
-				echo 'deploy to client server'
+				sshagent(['docker-client']) {
+					sh "ssh -oStrictHostKeyChecking=no ec2-user@35.176.201.0 docker run -itd --name mycontainer -p 8080:8080 amiyaranjansahoo/myimg:v1"
+				}
 			}
 		}
 	}
